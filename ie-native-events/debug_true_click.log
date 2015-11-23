@@ -1,0 +1,43 @@
+Run options: -v -n /double/ --seed 4911
+
+# Running:
+
+Open fiddler to see multiple requests when clicking the image link
+Started InternetExplorerDriver server (32-bit)
+2.48.0.0
+Listening on port 5555
+-> POST session
+   >>> http://127.0.0.1:5555/session | {"desiredCapabilities":{"browserName":"internet explorer","version":"","platform":"WINDOWS","javascriptEnabled":false,"cssSelectorsEnabled":true,"takesScreenshot":true,"nativeEvents":false,"rotatable":false}}
+     > {"Accept"=>"application/json", "Content-Type"=>"application/json; charset=utf-8", "Content-Length"=>"208"}
+<- {"sessionId":"1aa973bf-bbfd-4671-9ed5-e5cc9a4585d5","status":0,"value":{"browserAttachTimeout":0,"browserName":"internet explorer","cssSelectorsEnabled":true,"elementScrollBehavior":0,"enableElementCacheCleanup":true,"enablePersistentHover":false,"handlesAlerts":true,"ie.browserCommandLineSwitches":"","ie.ensureCleanSession":false,"ie.forceCreateProcessApi":false,"ie.usePerProcessProxy":false,"ignoreProtectedModeSettings":false,"ignoreZoomSetting":false,"initialBrowserUrl":"http://localhost:5555/","javascriptEnabled":true,"nativeEvents":false,"pageLoadStrategy":"normal","platform":"WINDOWS","requireWindowFocus":false,"takesScreenshot":true,"unexpectedAlertBehaviour":"dismiss","version":"11"}}
+-> POST session/1aa973bf-bbfd-4671-9ed5-e5cc9a4585d5/url
+   >>> http://127.0.0.1:5555/session/1aa973bf-bbfd-4671-9ed5-e5cc9a4585d5/url | {"url":"http://trabulmonkee.github.io/se-repos/ie-native-events/"}
+     > {"Accept"=>"application/json", "Content-Type"=>"application/json; charset=utf-8", "Content-Length"=>"66"}
+<- {"sessionId":"1aa973bf-bbfd-4671-9ed5-e5cc9a4585d5","status":0,"value":null}
+-> POST session/1aa973bf-bbfd-4671-9ed5-e5cc9a4585d5/timeouts/implicit_wait
+   >>> http://127.0.0.1:5555/session/1aa973bf-bbfd-4671-9ed5-e5cc9a4585d5/timeouts/implicit_wait | {"ms":10000}
+     > {"Accept"=>"application/json", "Content-Type"=>"application/json; charset=utf-8", "Content-Length"=>"12"}
+<- {"sessionId":"1aa973bf-bbfd-4671-9ed5-e5cc9a4585d5","status":0,"value":null}
+-> POST session/1aa973bf-bbfd-4671-9ed5-e5cc9a4585d5/element
+   >>> http://127.0.0.1:5555/session/1aa973bf-bbfd-4671-9ed5-e5cc9a4585d5/element | {"using":"id","value":"pil"}
+     > {"Accept"=>"application/json", "Content-Type"=>"application/json; charset=utf-8", "Content-Length"=>"28"}
+<- {"sessionId":"1aa973bf-bbfd-4671-9ed5-e5cc9a4585d5","status":0,"value":{"ELEMENT":"2fa57ab4-1f6f-420e-a019-81792f0f4e10","element-6066-11e4-a52e-4f735466cecf":"2fa57ab4-1f6f-420e-a019-81792f0f4e10"}}
+-> GET session/1aa973bf-bbfd-4671-9ed5-e5cc9a4585d5/element/2fa57ab4-1f6f-420e-a019-81792f0f4e10/text
+<- {"sessionId":"1aa973bf-bbfd-4671-9ed5-e5cc9a4585d5","status":0,"value":""}
+
+-> POST session/1aa973bf-bbfd-4671-9ed5-e5cc9a4585d5/element/2fa57ab4-1f6f-420e-a019-81792f0f4e10/click
+<- {"sessionId":"1aa973bf-bbfd-4671-9ed5-e5cc9a4585d5","status":0,"value":null}
+-> DELETE session/1aa973bf-bbfd-4671-9ed5-e5cc9a4585d5
+<- {"sessionId":"1aa973bf-bbfd-4671-9ed5-e5cc9a4585d5","status":0,"value":null}
+IE_Native_Events#test_double_image_link_click_native_events_false_debug = 7.19 s = .
+
+Finished in 7.200288s, 0.1389 runs/s, 0.2778 assertions/s.
+
+1 runs, 2 assertions, 0 failures, 0 errors, 0 skips
+
+generating ci files
+generation complete
+generating html files
+generation complete
+Files are located at: 'test/reports'
+

@@ -1,0 +1,47 @@
+Started InternetExplorerDriver server (32-bit)
+2.48.0.0
+Listening on port 5555
+Run options: -v -n /slow/ --seed 7357
+
+# Running:
+
+-> POST session
+   >>> http://127.0.0.1:5555/session | {"desiredCapabilities":{"browserName":"internet explorer","version":"","platform":"WINDOWS","javascriptEnabled":false,"cssSelectorsEnabled":true,"takesScreenshot":true,"nativeEvents":true,"rotatable":false,"requireWindowFocus":false}}
+     > {"Accept"=>"application/json", "Content-Type"=>"application/json; charset=utf-8", "Content-Length"=>"234"}
+<- {"sessionId":"0a8a0115-b4e6-4971-bee1-900634a36f6e","status":0,"value":{"browserAttachTimeout":0,"browserName":"internet explorer","cssSelectorsEnabled":true,"elementScrollBehavior":0,"enableElementCacheCleanup":true,"enablePersistentHover":true,"handlesAlerts":true,"ie.browserCommandLineSwitches":"","ie.ensureCleanSession":false,"ie.forceCreateProcessApi":false,"ie.usePerProcessProxy":false,"ignoreProtectedModeSettings":false,"ignoreZoomSetting":false,"initialBrowserUrl":"http://localhost:5555/","javascriptEnabled":true,"nativeEvents":true,"pageLoadStrategy":"normal","platform":"WINDOWS","requireWindowFocus":false,"takesScreenshot":true,"unexpectedAlertBehaviour":"dismiss","version":"11"}}
+-> POST session/0a8a0115-b4e6-4971-bee1-900634a36f6e/timeouts/implicit_wait
+   >>> http://127.0.0.1:5555/session/0a8a0115-b4e6-4971-bee1-900634a36f6e/timeouts/implicit_wait | {"ms":10000}
+     > {"Accept"=>"application/json", "Content-Type"=>"application/json; charset=utf-8", "Content-Length"=>"12"}
+<- {"sessionId":"0a8a0115-b4e6-4971-bee1-900634a36f6e","status":0,"value":null}
+-> POST session/0a8a0115-b4e6-4971-bee1-900634a36f6e/url
+   >>> http://127.0.0.1:5555/session/0a8a0115-b4e6-4971-bee1-900634a36f6e/url | {"url":"http://trabulmonkee.github.io/se-repos/ie-native-events/"}
+     > {"Accept"=>"application/json", "Content-Type"=>"application/json; charset=utf-8", "Content-Length"=>"66"}
+<- {"sessionId":"0a8a0115-b4e6-4971-bee1-900634a36f6e","status":0,"value":null}
+-> POST session/0a8a0115-b4e6-4971-bee1-900634a36f6e/element
+   >>> http://127.0.0.1:5555/session/0a8a0115-b4e6-4971-bee1-900634a36f6e/element | {"using":"id","value":"ptb"}
+     > {"Accept"=>"application/json", "Content-Type"=>"application/json; charset=utf-8", "Content-Length"=>"28"}
+<- {"sessionId":"0a8a0115-b4e6-4971-bee1-900634a36f6e","status":0,"value":{"ELEMENT":"1b3f0b3d-5c7f-462f-a3e5-9764d21f1d53","element-6066-11e4-a52e-4f735466cecf":"1b3f0b3d-5c7f-462f-a3e5-9764d21f1d53"}}
+-> POST session/0a8a0115-b4e6-4971-bee1-900634a36f6e/element/1b3f0b3d-5c7f-462f-a3e5-9764d21f1d53/value
+   >>> http://127.0.0.1:5555/session/0a8a0115-b4e6-4971-bee1-900634a36f6e/element/1b3f0b3d-5c7f-462f-a3e5-9764d21f1d53/value | {"value":["test 123"]}
+     > {"Accept"=>"application/json", "Content-Type"=>"application/json; charset=utf-8", "Content-Length"=>"22"}
+<- {"sessionId":"0a8a0115-b4e6-4971-bee1-900634a36f6e","status":0,"value":null}
+-> DELETE session/0a8a0115-b4e6-4971-bee1-900634a36f6e
+<- {"sessionId":"0a8a0115-b4e6-4971-bee1-900634a36f6e","status":0,"value":null}
+IE_Native_Events#test_with_desired_capabilities_native_events_true_require_window_focus_false_debug_slow = 43.54 s = F
+
+Finished in 43.551306s, 0.0230 runs/s, 0.0918 assertions/s.
+
+  1) Failure:
+IE_Native_Events#test_with_desired_capabilities_native_events_true_require_window_focus_false_debug_slow [C:/temp/ie_ne_tester/native_events_tester.rb:210]:
+slow performance encountered
+set textbox expect time: 2.0
+set textbox actual time: 40.131204
+
+1 runs, 4 assertions, 1 failures, 0 errors, 0 skips
+
+generating ci files
+generation complete
+generating html files
+generation complete
+Files are located at: 'test/reports'
+
