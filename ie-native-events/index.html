@@ -4,13 +4,24 @@
   </head>
   <body>
     <div id="div_textbox">
+    	<h3>Form</h3>
       <form id="form1">
         Enter Text: <input type="text" id="ptb" name="ptb"><br /><br />
         Image Link: <a href="netct.html"><img id="pil" border="1" alt="image_link" src="ie_ne_limg.png"></a><br /><br />
+        <hr />
         <strong>Open fiddler to see multiple requests when clicking the image link</strong><br /><br />
         Below is an example image of what I see in Fiddler<br />
         <img id="example_image" alt="example_image" border="0" src="double_click_fiddler_example.png">
       </form>
     </div>
+    <hr />
+    <div id="logs">
+    	<h3>Debug Logs</h3>
+    	<ul>
+    		<li><a href="debug_true_slow.log">Slow Performance Debug Log</a></li>
+    		<li><a href="debug_true_fast.log">Fast Performance Debug Log</a></li>
+    		<li><a href="debug_true_click.log">Click Debug Log</a></li>
+    	</ul>
+   	</div>
   </body>
 </html>
